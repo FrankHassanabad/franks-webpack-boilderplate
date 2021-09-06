@@ -3,14 +3,14 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const APP_PATH = path.resolve(__dirname, 'frontend/src');
+const APP_PATH = path.resolve(__dirname, 'src/frontend');
 
 module.exports = {
   entry: APP_PATH,
 
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/frontend'),
   },
 
   resolve: {
@@ -51,15 +51,11 @@ module.exports = {
       template: path.join(APP_PATH, 'index.html'),
     }),
     new ForkTsCheckerWebpackPlugin({
-      typescript: { configFile: 'frontend/tsconfig.json' },
+      typescript: { configFile: 'src/frontend/tsconfig.json' },
     }),
   ],
 
   performance: {
     hints: false,
-  },
-
-  devServer: {
-    open: true,
   },
 };

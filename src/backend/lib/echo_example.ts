@@ -1,9 +1,4 @@
-/**
- * Type of the Echo.
- */
-export type Echo = {
-  text: string;
-};
+import { Echo } from '../../shared/echo/types';
 
 /**
  * Echos the input string.

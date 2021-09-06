@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import { DataContract, echoApi } from './api';
+import React, { useEffect, useState } from 'react';
 
 /**
  * Example component.
@@ -13,7 +13,7 @@ export const Example = (): JSX.Element => {
 
   useEffect(() => {
     echoApi(setData);
-  }, [echoApi]);
+  }, []);
 
   return (
     <>

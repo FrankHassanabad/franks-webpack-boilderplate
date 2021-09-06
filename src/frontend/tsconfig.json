@@ -1,0 +1,13 @@
+{
+  "extends": "../base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../dist/frontend",
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "module": "ESNext",
+    "jsx": "react"
+  },
+  "include": ["**/*"],
+  "references": [{ "path": "../shared" }]
+}

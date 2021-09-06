@@ -1,4 +1,6 @@
-export type DataContract = { isLoaded: boolean; data: unknown | null };
+import { Echo } from '../../../shared/echo';
+
+export type DataContract = { isLoaded: boolean; data: string | null };
 export type SetData = (json: DataContract) => void;
 
 /**
@@ -14,9 +16,9 @@ export const echoApi = async (setData: SetData): Promise<void> => {
     body: JSON.stringify(bodyMessage),
     headers: new Headers({ 'content-type': 'application/json' }),
   });
-  const json = await response.json();
+  const json: Echo = await response.json();
   setData({
     isLoaded: true,
-    data: json,
+    data: json.text,
   });
 };
